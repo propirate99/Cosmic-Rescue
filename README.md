@@ -80,6 +80,10 @@ npm run preview
 
 ## Deployment
 
+### GitHub Pages
+
+Push to the `main` branch to run the GitHub Actions build and deployment workflow. The game is published at [https://propirate99.github.io/Cosmic-Rescue/](https://propirate99.github.io/Cosmic-Rescue/).
+
 ### Vercel
 
 1. Push this repository to GitHub.
