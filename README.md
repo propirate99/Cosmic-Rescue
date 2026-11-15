@@ -99,4 +99,3 @@ npm run preview
 
 This project uses original characters, story, artwork, interface design, sound design, and gameplay systems. Planetary information, imagery, and mission references are courtesy of NASA and its partners. This project is not affiliated with, endorsed by, or sponsored by NASA.
 
-Do not use Doraemon, PUBG, Free Fire, NASA Eyes, or any other copyrighted game's names, characters, artwork, audio, logos, or interface assets in this repository.
