@@ -1,77 +1,116 @@
 # Cosmic Rescue: The Little Space War
 
-An original, browser-based educational space-mission design game. Assemble a crew, engineer a spacecraft, balance mission resources, and guide a rescue operation through six fictionalized campaign waypoints.
+**Cosmic Rescue: The Little Space War** is an original educational space-mission design game created for the NASA Space Apps Challenge. An alien villain, Vortex, has kidnapped Miko beyond Saturn. Players design a spacecraft, manage limited mission resources, travel through the solar system, solve engineering puzzles, and complete a rescue mission.
 
-## Features
+## NASA Space Apps Challenge
 
-- React 18 + Vite single-page application (JavaScript, no backend or login)
-- Local squad selection with four specialist roles
-- Interactive spacecraft builder with mass, cost, power, data, range, and payload constraints
-- Six decision-driven mission zones: Earth Orbit, Moon, Mars, Asteroid Belt, Saturn, and Alien Base
-- Reducer-driven game state, resource consequences, failure states, final score, rank, and decision log
-- Animated starfield, launch sequence, transit screen, and mission HUD
-- Optional asteroid-evasion canvas mini-game
-- Browser-generated sound effects with a mute control
-- Optional NASA Image and Video Library, APOD Basic, NeoWs, and EPIC data panels with graceful offline fallback
-- Responsive layout and reduced-motion support
+This project was created for the **Space Mission Design Game** challenge. The game teaches real mission-design trade-offs:
 
-## Run locally
+- Spacecraft mass and launch capacity
+- Electrical power generation and consumption
+- Propellant and trajectory decisions
+- Scientific instruments and data generation
+- Communications bandwidth and deep-space delay
+- Mission budget
+- Risk, armor, and mission lifetime
+- Scientific value versus rescue capability
 
-Requires Node.js 18 or newer.
+Every decision affects multiple mission systems. There is no single perfect spacecraft design.
+
+## NASA resources used
+
+- [NASA Image and Video Library API](https://images-api.nasa.gov/)
+- [NASA Open APIs](https://api.nasa.gov/)
+- [NASA Planetary Fact Sheets](https://nssdc.gsfc.nasa.gov/planetary/planetfact.html)
+- [NASA Science](https://science.nasa.gov/)
+- [NASA Open Data Portal](https://data.nasa.gov/)
+- [NASA Eyes on the Solar System](https://eyes.nasa.gov/apps/solar-system/#/home)
+
+NASA's public resources informed the game's educational content, mission imagery, planetary context, and space-exploration themes.
+
+## Gameplay
+
+1. Select a squad role: Commander, Engineer, Scientist, or Communications Officer.
+2. Design a spacecraft using hulls, propulsion, power systems, antennas, and instruments.
+3. Choose a launch vehicle and destination.
+4. Launch the mission.
+5. Travel through the solar system.
+6. Solve mission events and engineering puzzles.
+7. Rescue Miko from Vortex's alien base.
+8. Review the mission report and final score.
+
+## Tech stack
+
+- React 18
+- Vite
+- JavaScript
+- CSS
+- HTML5 Canvas
+- Web Audio API
+- NASA public APIs
+
+## Local development
+
+Install dependencies:
 
 ```bash
 npm install
-cp .env.example .env
+```
+
+Create a `.env` file:
+
+```env
+VITE_NASA_API_KEY=DEMO_KEY
+```
+
+Start the development server:
+
+```bash
 npm run dev
 ```
 
-Open the local URL printed by Vite (normally `http://localhost:5173`). The game is playable without a NASA API key; live Mission Intel may be rate-limited or unavailable when using `DEMO_KEY`.
+Open:
 
-## NASA data and attribution
-
-The game can request public information from NASA's Image and Video Library API, the current APOD Basic feed, Near Earth Object Web Service (NeoWs), and EPIC API. Mars rover mission imagery is searched through the Image and Video Library because NASA has archived the legacy Mars Rover Photos API. The requests are optional and are not required for gameplay. When a request fails, the app shows locally authored mission context and fallback visuals instead of blocking a mission.
-
-Set `VITE_NASA_API_KEY` in `.env` to a NASA API key from [api.nasa.gov](https://api.nasa.gov/) to use your own rate allocation. Vite exposes variables prefixed with `VITE_` to browser code, so this value is visible to visitors in the built client; do not treat it as a secret or reuse a credential that protects private systems. `.env` is excluded from Git.
-
-Data and imagery are courtesy of NASA and their respective contributors. This original educational game is not affiliated with, endorsed by, or sponsored by NASA. NASA names and marks are not used as project branding.
-
-## Checks
-
-Run the pure mission-engine smoke tests with:
-
-```bash
-npm test
+```
+http://localhost:5173
 ```
 
-## Build and preview
+## Production build
 
 ```bash
 npm run build
 npm run preview
 ```
 
-The production build is written to `dist/`.
-
-## Deploy
+## Deployment
 
 ### Vercel
 
-Import the Git repository into Vercel. The included `vercel.json` configures `npm run build` and `dist`. Add `VITE_NASA_API_KEY` in the project environment settings if you want live NASA data beyond the demo key's public limits.
+1. Push this repository to GitHub.
+2. Import it into Vercel.
+3. Set the environment variable:
+   ```
+   VITE_NASA_API_KEY=your_nasa_api_key
+   ```
+4. Deploy.
 
 ### Netlify
 
-Import the Git repository into Netlify. The included `netlify.toml` configures the build command and publish directory. Add `VITE_NASA_API_KEY` in site environment settings if desired.
+1. Push this repository to GitHub.
+2. Import it into Netlify.
+3. Set:
+   ```
+   Build command: npm run build
+   Publish directory: dist
+   ```
+4. Add the environment variable:
+   ```
+   VITE_NASA_API_KEY=your_nasa_api_key
+   ```
+5. Deploy.
 
-## Controls
+## Copyright and attribution
 
-- Use the mouse or touch to choose crew roles, ship components, and mission options.
-- During the asteroid-evasion drill, use the up/down or left/right arrow keys to move between lanes. On-screen controls are also provided.
-- Sound begins only after a user interaction, as required by browser audio policies.
+This project uses original characters, story, artwork, interface design, sound design, and gameplay systems. Planetary information, imagery, and mission references are courtesy of NASA and its partners. This project is not affiliated with, endorsed by, or sponsored by NASA.
 
-## Copyright-safe design
-
-All characters, narrative framing, UI styling, gameplay logic, visual treatments, and generated sound effects in this project are original. The game does not use third-party game characters, game music, logos, or copied game interfaces. NASA material is used as an optional source of factual context and appropriately attributed media.
-
-## License
-
-MIT. See [LICENSE](./LICENSE).
+Do not use Doraemon, PUBG, Free Fire, NASA Eyes, or any other copyrighted game's names, characters, artwork, audio, logos, or interface assets in this repository.
