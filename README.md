@@ -69,11 +69,7 @@ Start the development server:
 npm run dev
 ```
 
-Open:
-
-```
-http://localhost:5173
-```
+Open `http://localhost:5173`.
 
 ## Production build
 
@@ -88,25 +84,15 @@ npm run preview
 
 1. Push this repository to GitHub.
 2. Import it into Vercel.
-3. Set the environment variable:
-   ```
-   VITE_NASA_API_KEY=your_nasa_api_key
-   ```
+3. Set `VITE_NASA_API_KEY` to your NASA API key.
 4. Deploy.
 
 ### Netlify
 
 1. Push this repository to GitHub.
 2. Import it into Netlify.
-3. Set:
-   ```
-   Build command: npm run build
-   Publish directory: dist
-   ```
-4. Add the environment variable:
-   ```
-   VITE_NASA_API_KEY=your_nasa_api_key
-   ```
+3. Set the build command to `npm run build` and the publish directory to `dist`.
+4. Set `VITE_NASA_API_KEY` to your NASA API key.
 5. Deploy.
 
 ## Copyright and attribution
